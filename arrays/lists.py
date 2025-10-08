@@ -7,7 +7,7 @@
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-newList = None
+newList = ['Joshua']
 
 ########################################################################
 
@@ -30,8 +30,9 @@ appendElement = "ok?"
 #  'list1' should remain unchanged
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
-
-listCopy = None
+import copy
+listCopy = copy.deepcopy(list1)
+listCopy.append(appendElement)
 
 ########################################################################
 
@@ -54,9 +55,8 @@ cycleMe = list(range(1, random.randint(5, 15)))
 cycleMeCopy = list(cycleMe)
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
-
-
-
+cycleMe.append(cycleMe.pop(0))
+cycleMe.append(cycleMe.pop(0))
 ########################################################################
 
 
@@ -73,7 +73,8 @@ keepMe = clearJustMe
 #  so it still points to the original list. Do nothing to 'keepMe'.
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
-
+keepMe = copy.deepcopy(clearJustMe)
+clearJustMe.clear()
 
 
 ########################################################################
@@ -92,7 +93,7 @@ loseMe = clearAll
 #  so that it too reference the same emptied list. Do nothing to 'loseMe'.
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
-
+clearAll.clear()
 
 
 ########################################################################
@@ -111,7 +112,7 @@ allScoresCopy = list(allScores)
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-top3Scores = None
+top3Scores = sorted(allScores, reverse=True)[:3]
 
 ########################################################################
 
